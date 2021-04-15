@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Product.AddProductPanelControl">
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="25.0" prefHeight="500.0" prefWidth="850.0" style="-fx-border-width: 1; -fx-border-style: solid; -fx-border-radius: 20;">
+         <children>
+            <Label layoutX="34.0" layoutY="36.0" text="Add Product">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER_LEFT" layoutX="70.0" layoutY="105.0" prefHeight="225.0" prefWidth="61.0" spacing="20.0">
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" />
+                  <Label text="Inventory" />
+                  <Label text="Price" />
+                  <Label text="Max" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" fillWidth="false" layoutX="128.0" layoutY="105.0" prefHeight="225.0" prefWidth="149.0" spacing="12.0">
+               <children>
+                  <TextField fx:id="idProductField" editable="false" promptText="Auto Gen - Disabled" />
+                  <TextField fx:id="nameProductField" />
+                  <TextField fx:id="stockProductField" prefWidth="100.0" />
+                  <TextField fx:id="priceProductField" prefWidth="100.0" />
+                  <TextField fx:id="maxProductField" prefHeight="25.0" prefWidth="100.0" />
+               </children>
+            </VBox>
+            <TableView fx:id="partFieldView" layoutX="450.0" layoutY="53.0" prefHeight="160.0" prefWidth="386.0">
+              <columns>
+                <TableColumn fx:id="partColumnId" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partColumnName" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="partColumnStock" prefWidth="92.0" text="Inventory Level" />
+                  <TableColumn fx:id="partColumnPrice" prefWidth="143.0" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+            <TableView fx:id="relatedPartFieldView" layoutX="450.0" layoutY="261.0" prefHeight="160.0" prefWidth="386.0">
+              <columns>
+                <TableColumn fx:id="relatedPartColumnId" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="relatedPartColumnName" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="relatedPartColumnStock" prefWidth="97.0" text="Inventory Level" />
+                  <TableColumn fx:id="relatedPartColumnPrice" prefWidth="138.0" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+            <TextField fx:id="partSearchField" layoutX="687.0" layoutY="19.0" onKeyPressed="#partSearchKey" promptText="Search by Part ID or Name" />
+            <Button layoutX="736.0" layoutY="226.0" mnemonicParsing="false" onAction="#addButtonEvent" text="Add" />
+            <VBox alignment="CENTER_RIGHT" layoutX="228.0" layoutY="276.0" prefHeight="25.0" prefWidth="38.0" spacing="15.0">
+               <children>
+                  <Label text="Min" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="277.0" layoutY="267.0" prefHeight="49.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="minProductField" prefHeight="25.0" prefWidth="25.0" />
+               </children>
+            </VBox>
+            <AnchorPane layoutX="675.0" layoutY="416.0" prefHeight="74.0" prefWidth="165.0">
+               <children>
+                  <Button layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeButtonEvent" text="Remove Associated Part" />
+                  <Button layoutX="14.0" layoutY="44.0" mnemonicParsing="false" onAction="#saveButtonEvent" text="Save" />
+                  <Button layoutX="99.0" layoutY="44.0" mnemonicParsing="false" onAction="#cancelButtonEvent" text="Cancel" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="617.0" layoutY="19.0" mnemonicParsing="false" onAction="#partSearchEvent" text="Search" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

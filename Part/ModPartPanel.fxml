@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Part.ModPartPanelControl">
+   <children>
+      <HBox layoutX="41.0" layoutY="44.0" prefHeight="25.0" prefWidth="360.0" spacing="25.0">
+         <children>
+            <Label text="Modify Part">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="inHouseSwitch" mnemonicParsing="false" onAction="#inHouseSwitchEvent" text="In-House">
+                    <toggleGroup>
+                       <ToggleGroup fx:id="partGroup" />
+                    </toggleGroup></RadioButton>
+            <RadioButton fx:id="outsourcedSwitch" mnemonicParsing="false" onAction="#outsourcedSwitchEvent" text="Outsourced" toggleGroup="$partGroup">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </HBox>
+      <HBox layoutX="263.0" layoutY="314.0" prefHeight="25.0" prefWidth="137.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#saveButtonEvent" text="Save" />
+            <Button mnemonicParsing="false" onAction="#cancelButtonEvent" text="Cancel" />
+         </children>
+      </HBox>
+      <VBox layoutX="41.0" layoutY="114.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+         <children>
+            <Label text="ID">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Name" />
+            <Label text="Inv" />
+            <Label text="Price/Cost" />
+            <Label text="Max" />
+            <Label fx:id="machineCompLabel" text="Machine ID" />
+         </children>
+      </VBox>
+      <VBox layoutX="141.0" layoutY="114.0" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <TextField fx:id="idPartField" editable="false">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="namePartField" />
+            <TextField fx:id="stockPartField" />
+            <TextField fx:id="pricePartField" />
+            <TextField fx:id="maxPartField" />
+            <TextField fx:id="machineCompField" layoutX="10.0" layoutY="130.0" />
+         </children>
+      </VBox>
+      <HBox layoutX="263.0" layoutY="244.0" prefHeight="25.0" prefWidth="188.0" spacing="20.0">
+         <children>
+            <Label text="Min">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="minPartField" prefHeight="25.0" prefWidth="115.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
